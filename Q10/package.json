@@ -1,0 +1,15 @@
+{
+  "name": "q10",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node Q10.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "script1": "node Q10_script1.js",
+    "script2": "node Q10_script2.js",
+    "script3": "node Q10_script3.js"
+  },
+  "author": "",
+  "license": "ISC"
+}

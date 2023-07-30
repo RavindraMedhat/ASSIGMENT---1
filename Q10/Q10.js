@@ -1,0 +1,1 @@
+console.log("Q10.js");
