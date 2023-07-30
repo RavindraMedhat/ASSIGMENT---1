@@ -27,6 +27,10 @@ module.exports.Replay = function name(Msg) {
         } else {
             Msg = "I THINK YOUR NAME IS " + username;
         }
+    } else if (Msg.indexOf("WHAT IS YOUR NAME ?") > -1) {
+
+        Msg = "MY NAME IS " + botname;
+
     } else if (Msg.indexOf("MY BIRTHDATE IS") > -1) {
 
         userBirthdate = Msg.slice(Msg.indexOf("MY BIRTHDATE IS") + 16).trim()
@@ -56,6 +60,11 @@ module.exports.Replay = function name(Msg) {
     } else if (Msg.indexOf("WHAT IS YOUR BIRTHDATE ?") > -1) {
 
         Msg = "MY BIRTHDATE IS :- " + botBirthdate;
+
+    } else {
+
+        Msg = " I DON'T KNOW WHAT YOU SAY 🫥🫥 ";
+
     }
 
     return Msg;

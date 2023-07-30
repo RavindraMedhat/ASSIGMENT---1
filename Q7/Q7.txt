@@ -1,0 +1,1 @@
+7. Write a program to promisify fs.unlink function and call it.
