@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Q11</title>
+    <script lang="javascript">
+        var ws = new WebSocket("ws://localhost:7485");
+        ws.addEventListener("message", (ans) => {
+            var msg = ans.data;
+            document.getElementById("chatlog").innerHTML = "<br>" + msg;
+        });
+
+        function sendMessage(message) {
+            ws.send(message);
+        }
+    </script>
+</head>
+
+<body>
+
+    <h2>Score</h2>
+    <div id="chatlog"></div>
+    <hr />
+    <h2>Update Score</h2>
+    <input type="button" id="b1" onclick="sendMessage(1)" value="1" />
+    <input type="button" id="b1" onclick="sendMessage(2)" value="2" />
+    <input type="button" id="b1" onclick="sendMessage(3)" value="3" />
+    <input type="button" id="b1" onclick="sendMessage(4)" value="4" />
+    <input type="button" id="b1" onclick="sendMessage(5)" value="5" />
+    <input type="button" id="b1" onclick="sendMessage(6)" value="6" />
+    <input type="button" id="b1" onclick="sendMessage(7)" value="7" />
+    <input type="button" id="b1" onclick="sendMessage('Wicket')" value="Wicket" />
+
+</body>
+
+</html>

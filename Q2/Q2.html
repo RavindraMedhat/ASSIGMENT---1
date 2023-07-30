@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Q2</title>
+</head>
+
+<body>
+    <h1>Q2</h1>
+    <button id="getHelloBtn">Get Hello from Node.js</button>
+    <div id="response"></div>
+
+    <script>
+        const getHelloBtn = document.getElementById('getHelloBtn');
+        const responseDiv = document.getElementById('response');
+
+        getHelloBtn.addEventListener('click', () => {
+            fetch('/gethello')
+                .then(
+                    response => response.text()
+                        .then(data => {
+                            console.log(data);
+                            responseDiv.innerText += data;
+                        }));
+        });
+    </script>
+</body>
+
+</html>

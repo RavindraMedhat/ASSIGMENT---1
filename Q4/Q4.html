@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Q4</title>
+    <script lang="javascript">
+        var ws = new WebSocket("ws://localhost:7485");
+        ws.addEventListener("message", (ans) => {
+            var msg = ans.data;
+            document.getElementById("chatlog").innerHTML += "<br> Bote ::-   " + msg;
+        });
+
+        function sendMessage() {
+            var message = document.getElementById("message").value;
+            document.getElementById("chatlog").innerHTML += "<br> You ::-   " + message;
+            ws.send(message);
+            document.getElementById("message").value = "";
+        }
+    </script>
+</head>
+
+<body>
+
+    <h2>Data from server</h2>
+    <div id="chatlog"></div>
+    <hr />
+    <h2>Data from client</h2>
+    <input type="text" id="message" />
+    <input type="button" id="b1" onclick="sendMessage()" value="send" />
+
+</body>
+
+</html>

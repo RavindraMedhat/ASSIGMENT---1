@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Q11 Score</title>
+    <script lang="javascript">
+        var ws = new WebSocket("ws://localhost:7485");
+        ws.addEventListener("message", (ans) => {
+            var msg = ans.data;
+            console.log(msg);
+            document.getElementById("Score").innerHTML = "<br> " + msg;
+        });
+
+    </script>
+</head>
+
+<body>
+
+    <h2>Score</h2>
+    <div id="Score"></div>
+
+</body>
+
+</html>
