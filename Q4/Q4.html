@@ -76,14 +76,14 @@
         var ws = new WebSocket("ws://localhost:7485");
         ws.addEventListener("message", (ans) => {
             var msg = ans.data;
-            document.getElementById("chatlog").innerHTML += "<br><strong>Bot:</strong> " + msg;
+            document.getElementById("chatlog").innerHTML += "<br><strong>Bot::- </strong> " + msg;
             // Scroll to the bottom of the chat log
             document.getElementById("chatlog").scrollTop = document.getElementById("chatlog").scrollHeight;
         });
 
         function sendMessage() {
             var message = document.getElementById("message").value;
-            document.getElementById("chatlog").innerHTML += "<br><strong>You:</strong> " + message;
+            document.getElementById("chatlog").innerHTML += "<br><strong>You::- </strong> " + message;
             document.getElementById("chatlog").scrollTop = document.getElementById("chatlog").scrollHeight;
             ws.send(message);
             document.getElementById("message").value = "";
